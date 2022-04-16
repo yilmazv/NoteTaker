@@ -16,7 +16,9 @@ fs.readFile("./Develop/db/db.json", "utf8", (err, data) => {
     parsedNotes.push(noteTaken);
     updateDataBase();
     console.log("New note added");
+    res.send("Note has been added");
   });
+
   router.get("/notes", function (req, res) {
     console.log("testing endpoint");
     res.sendFile(path.join(__dirname, "../public/notes.html"));
